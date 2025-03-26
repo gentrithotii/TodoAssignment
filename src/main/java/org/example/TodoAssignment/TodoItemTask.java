@@ -1,4 +1,4 @@
-package org.example.Todo_Exercise;
+package org.example.TodoAssignment;
 
 public class TodoItemTask {
     private int id;

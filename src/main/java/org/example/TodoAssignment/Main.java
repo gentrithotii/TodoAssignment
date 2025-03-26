@@ -1,4 +1,5 @@
-package org.example.Todo_Exercise;
+package org.example.TodoAssignment;
+
 
 import java.time.LocalDate;
 
@@ -10,5 +11,7 @@ public class Main {
         newTodoItem.setDeadLine(testDate);
         System.out.println(newTodoItem.getDeadLine());
         System.out.println(newTodoItem.isOverdue());
+        //test
+        System.out.println("Test");
     }
 }
