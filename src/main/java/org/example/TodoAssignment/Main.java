@@ -5,13 +5,8 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-
-        TodoItem newTodoItem = new TodoItem();
-        LocalDate testDate = LocalDate.of(2025,3,23);
-        newTodoItem.setDeadLine(testDate);
-        System.out.println(newTodoItem.getDeadLine());
-        System.out.println(newTodoItem.isOverdue());
-        //test
-        System.out.println("Test");
+        Person gentritHoti = new Person("Gentrit", "Hoti", "Gentrit@test.com");
+        TodoItem todoItem = new TodoItem("Hair cut", "Get a haircut at the city", LocalDate.of(2025, 3, 26), false, gentritHoti);
+        System.out.println(todoItem.getSummary());
     }
 }

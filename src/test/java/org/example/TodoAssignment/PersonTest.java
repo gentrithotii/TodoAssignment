@@ -1,11 +1,18 @@
 package org.example.TodoAssignment;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
+    private Person person;
+
+    @BeforeEach
+    void setUp() {
+        person = new Person("Gentrit", "Test", "Gentrit.test@test.com");
+    }
 
     @Test
     @DisplayName("")
@@ -19,28 +26,9 @@ class PersonTest {
 
     @Test
     @DisplayName("")
-    void getFirstName() {
-    }
-
-    @Test
-    @DisplayName("")
     void setFirstName() {
     }
 
-    @Test
-    @DisplayName("")
-    void getLastName() {
-    }
-
-    @Test
-    @DisplayName("")
-    void testGetLastName() {
-    }
-
-    @Test
-    @DisplayName("")
-    void getEmail() {
-    }
 
     @Test
     @DisplayName("")

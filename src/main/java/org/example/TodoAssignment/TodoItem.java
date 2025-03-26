@@ -1,6 +1,7 @@
 package org.example.TodoAssignment;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class TodoItem {
     private int id;
@@ -10,6 +11,14 @@ public class TodoItem {
     private boolean done;
     private Person creator;
 
+    public TodoItem(String title, String description, LocalDate deadLine, boolean done, Person creator) {
+        this.id++;
+        setTitle(title);
+        setDescription(description);
+        setDeadLine(deadLine);
+        setDone(done);
+        setCreator(creator);
+    }
 
     public int getId() {
         return id;
@@ -22,6 +31,7 @@ public class TodoItem {
     public void setTitle(String title) {
         if (title == null || title.trim().isEmpty())
             throw new IllegalArgumentException("Title cannot be Null or Empty");
+
         this.title = title;
     }
 
@@ -32,6 +42,7 @@ public class TodoItem {
     public void setDescription(String description) {
         if (description == null || description.trim().isEmpty())
             throw new IllegalArgumentException("Last name cannot be Null or Empty");
+
         this.description = description;
     }
 
@@ -42,6 +53,7 @@ public class TodoItem {
     public void setDeadLine(LocalDate deadLine) {
         if (deadLine == null || deadLine.toString().trim().isEmpty())
             throw new IllegalArgumentException("Last name cannot be Null or Empty");
+
         this.deadLine = deadLine;
     }
 
@@ -66,6 +78,6 @@ public class TodoItem {
     }
 
     public String getSummary() {
-        return "Add summary text";
+        return "Todo name: " + getTitle() + "\nDescription:  " + getDescription() + "\nThe deadline: " + getDeadLine() + "\nStatus is done: " + isDone() + "\nCreator: " + getCreator().getSummary();
     }
 }
