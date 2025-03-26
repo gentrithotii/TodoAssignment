@@ -9,17 +9,21 @@ public class Person {
     private String email;
 
     public Person(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
     }
 
     public int getId() {
         return id;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -27,7 +31,7 @@ public class Person {
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public void getLastName(String lastName) {
@@ -35,17 +39,18 @@ public class Person {
     }
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getFullName(){
-        return getFirstName() +  " " +  getLastName();
+
+    public String getFullName() {
+        return getFirstName() + " " + getLastName();
     }
 
     public String getSummary() {
-       return MessageFormat.format("Id: {0} ,name: {1}}, email: {2} ",getId(), getFullName(), getEmail());
+        return MessageFormat.format("Id: {0} ,name: {1}}, email: {2} ", getId(), getFullName(), getEmail());
     }
 }

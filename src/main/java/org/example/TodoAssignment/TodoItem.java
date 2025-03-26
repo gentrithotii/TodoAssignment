@@ -16,7 +16,7 @@ public class TodoItem {
     }
 
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
     public void setTitle(String title) {
