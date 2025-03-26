@@ -1,7 +1,6 @@
 package org.example.TodoAssignment;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class TodoItem {
     private int id;
