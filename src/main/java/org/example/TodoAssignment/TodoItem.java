@@ -20,6 +20,8 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
+        if (title == null || title.trim().isEmpty())
+            throw new IllegalArgumentException("Title cannot be Null or Empty");
         this.title = title;
     }
 
@@ -28,6 +30,8 @@ public class TodoItem {
     }
 
     public void setDescription(String description) {
+        if (description == null || description.trim().isEmpty())
+            throw new IllegalArgumentException("Last name cannot be Null or Empty");
         this.description = description;
     }
 
@@ -36,6 +40,8 @@ public class TodoItem {
     }
 
     public void setDeadLine(LocalDate deadLine) {
+        if (deadLine == null || deadLine.toString().trim().isEmpty())
+            throw new IllegalArgumentException("Last name cannot be Null or Empty");
         this.deadLine = deadLine;
     }
 
