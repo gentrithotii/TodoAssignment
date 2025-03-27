@@ -6,6 +6,10 @@ public class TodoItemTask {
     private TodoItem todoItem;
     private Person assignee;
 
+    TodoItemTask() {
+        this.id++;
+    }
+
     public int getId() {
         return id;
     }

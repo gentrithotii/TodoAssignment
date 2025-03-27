@@ -53,11 +53,8 @@ public class Person {
         this.email = email;
     }
 
-    public String getFullName() {
-        return getFirstName() + " " + getLastName();
-    }
 
     public String getSummary() {
-        return MessageFormat.format("Id: {0} ,name: {1}}, email: {2} ", getId(), getFullName(), getEmail());
+        return MessageFormat.format("Id: {0} ,name: {1} {2}, email: {3} ", getId(), getFirstName(), getLastName(), getEmail());
     }
 }
