@@ -8,6 +8,6 @@ public class Main {
         Person gentritHoti = new Person("Gentrit", "Hoti", "Gentrit@test.com");
         TodoItem todoItem = new TodoItem("Hair cut", "Get a haircut at the city", LocalDate.of(2025, 3, 26), false, gentritHoti);
         System.out.println(todoItem.getSummary());
-        System.out.println(todoItem.getId());
+        System.out.println(gentritHoti.getSummary());
     }
 }

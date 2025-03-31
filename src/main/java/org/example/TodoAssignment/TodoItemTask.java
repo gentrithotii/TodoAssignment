@@ -39,6 +39,6 @@ public class TodoItemTask {
     }
 
     public String getSummary() {
-        return "Add summary";
+        return "\nid: " + getId() + "\nAssigned: " + isAssigned() + "\nTodo item: " + getTodoItem().getSummary() + " " + "\nThe Assignee: " + assignee.getSummary();
     }
 }

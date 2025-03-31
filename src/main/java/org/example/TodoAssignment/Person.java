@@ -7,6 +7,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
+    private AppUser credentials;
 
     public Person(String firstName, String lastName, String email) {
         setFirstName(firstName);
@@ -16,6 +17,14 @@ public class Person {
 
     public int getId() {
         return id;
+    }
+
+    public AppUser getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
     }
 
     public void setLastName(String lastName) {
@@ -53,8 +62,25 @@ public class Person {
         this.email = email;
     }
 
+    @Override
+    public int hashCode() {
+        //Don't include credentials
+        return super.hashCode();
+    }
 
-    public String getSummary() {
-        return MessageFormat.format("Id: {0} ,name: {1} {2}, email: {3} ", getId(), getFirstName(), getLastName(), getEmail());
+    @Override
+    public boolean equals(Object obj) {
+        //Don't include credentials
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append("\n")
+                .append("Name: ").append(getFirstName()).append(" ").append(getLastName()).append("\n")
+                .append("Email: ").append(getEmail());
+
+        return sb.toString();
     }
 }

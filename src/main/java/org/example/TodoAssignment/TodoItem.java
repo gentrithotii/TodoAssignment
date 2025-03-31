@@ -40,7 +40,7 @@ public class TodoItem {
 
     public void setDescription(String description) {
         if (description == null || description.trim().isEmpty())
-            throw new IllegalArgumentException("Last name cannot be Null or Empty");
+            throw new IllegalArgumentException("Description cannot be Null or Empty");
 
         this.description = description;
     }
@@ -51,7 +51,7 @@ public class TodoItem {
 
     public void setDeadLine(LocalDate deadLine) {
         if (deadLine == null || deadLine.toString().trim().isEmpty())
-            throw new IllegalArgumentException("Last name cannot be Null or Empty");
+            throw new IllegalArgumentException("Deadline cannot be Null or Empty");
 
         this.deadLine = deadLine;
     }
@@ -74,6 +74,26 @@ public class TodoItem {
 
     public boolean isOverdue() {
         return getDeadLine().isBefore(LocalDate.now());
+    }
+    public int hashCode() {
+        //Don't include Person object(s)
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        //Don't include Person object(s)
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append("\n")
+                .append("Name: ").append(getFirstName()).append(" ").append(getLastName()).append("\n")
+                .append("Email: ").append(getEmail());
+
+        return sb.toString();
     }
 
     public String getSummary() {
