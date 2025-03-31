@@ -2,6 +2,8 @@ package org.example.TodoAssignment.todo;
 
 import org.example.TodoAssignment.user.Person;
 
+import java.util.Objects;
+
 public class TodoItemTask {
     private static int sequencer = 0;
     private final int id;
@@ -46,15 +48,15 @@ public class TodoItemTask {
     }
 
     @Override
-    public int hashCode() {
-        //Don't include Person object(s)
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItemTask that = (TodoItemTask) o;
+        return getId() == that.getId() && isAssigned() == that.isAssigned() && Objects.equals(getTodoItem(), that.getTodoItem());
     }
 
     @Override
-    public boolean equals(Object obj) {
-        //Don't include Person object(s)
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(getId(), isAssigned(), getTodoItem());
     }
 
     @Override

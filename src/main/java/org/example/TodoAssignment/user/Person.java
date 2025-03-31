@@ -1,5 +1,7 @@
 package org.example.TodoAssignment.user;
 
+import java.util.Objects;
+
 public class Person {
     private int id;
     private String firstName;
@@ -60,16 +62,19 @@ public class Person {
         this.email = email;
     }
 
+    //Don't include credentials in hash and equals
+
+
     @Override
-    public int hashCode() {
-        //Don't include credentials
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return getId() == person.getId() && Objects.equals(getFirstName(), person.getFirstName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getEmail(), person.getEmail());
     }
 
     @Override
-    public boolean equals(Object obj) {
-        //Don't include credentials
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(getId(), getFirstName(), getLastName(), getEmail());
     }
 
     @Override

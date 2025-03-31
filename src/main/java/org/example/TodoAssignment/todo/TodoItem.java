@@ -3,6 +3,7 @@ package org.example.TodoAssignment.todo;
 import org.example.TodoAssignment.user.Person;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
     private int id;
@@ -79,15 +80,15 @@ public class TodoItem {
     }
 
     @Override
-    public int hashCode() {
-        //Don't include Person object(s)
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoItem todoItem = (TodoItem) o;
+        return getId() == todoItem.getId() && isDone() == todoItem.isDone() && Objects.equals(getTitle(), todoItem.getTitle()) && Objects.equals(getDescription(), todoItem.getDescription()) && Objects.equals(getDeadLine(), todoItem.getDeadLine());
     }
 
     @Override
-    public boolean equals(Object obj) {
-        //Don't include Person object(s)
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(getId(), getTitle(), getDescription(), getDeadLine(), isDone());
     }
 
     @Override

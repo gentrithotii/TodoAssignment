@@ -1,5 +1,7 @@
 package org.example.TodoAssignment.user;
 
+import java.util.Objects;
+
 public class AppUser {
     private String userName;
     private String password;
@@ -43,15 +45,15 @@ public class AppUser {
     }
 
     @Override
-    public int hashCode() {
-        //Don't include Password
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        AppUser appUser = (AppUser) o;
+        return Objects.equals(getUserName(), appUser.getUserName()) && getRole() == appUser.getRole();
     }
 
     @Override
-    public boolean equals(Object obj) {
-        //Don't include Password
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(getUserName(), getRole());
     }
 
     @Override
