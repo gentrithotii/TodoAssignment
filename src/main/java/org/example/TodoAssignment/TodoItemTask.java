@@ -38,7 +38,26 @@ public class TodoItemTask {
         this.assignee = assignee;
     }
 
-    public String getSummary() {
-        return "\nid: " + getId() + "\nAssigned: " + isAssigned() + "\nTodo item: " + getTodoItem().getSummary() + " " + "\nThe Assignee: " + assignee.getSummary();
+    @Override
+    public int hashCode() {
+        //Don't include Person object(s)
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        //Don't include Person object(s)
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append("\n")
+                .append("Todo item: ").append(getTodoItem()).append("\n")
+                .append("Assigned status: ").append(assigned).append("\n");
+
+
+        return sb.toString();
     }
 }

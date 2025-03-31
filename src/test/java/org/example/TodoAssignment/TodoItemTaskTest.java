@@ -110,7 +110,7 @@ class TodoItemTaskTest {
         String expected = "Add summary";
 
         //Act
-        String result = task.getSummary();
+        String result = task.toString();
 
         //Assert
         Assertions.assertEquals(expected, result);

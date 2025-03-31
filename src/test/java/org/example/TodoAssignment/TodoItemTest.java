@@ -133,7 +133,7 @@ class TodoItemTest {
     @Test
     @DisplayName("Test if summary is formatted correctly")
     void getSummary() {
-        String summary = todoItem.getSummary();
+        String summary = todoItem.toString();
         Assertions.assertTrue(summary.contains("Test Title"));
         Assertions.assertTrue(summary.contains("Test Description"));
     }

@@ -75,6 +75,8 @@ public class TodoItem {
     public boolean isOverdue() {
         return getDeadLine().isBefore(LocalDate.now());
     }
+
+    @Override
     public int hashCode() {
         //Don't include Person object(s)
         return super.hashCode();
@@ -89,14 +91,12 @@ public class TodoItem {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId()).append("\n")
-                .append("Name: ").append(getFirstName()).append(" ").append(getLastName()).append("\n")
-                .append("Email: ").append(getEmail());
+        sb.append("Todo name: ").append(getTitle()).append("\n")
+                .append("Description: ").append(getDescription()).append("\n")
+                .append("The deadline: ").append(getDeadLine()).append("\n")
+                .append("Is done status: ").append(isDone());
 
         return sb.toString();
     }
 
-    public String getSummary() {
-        return "Todo name: " + getTitle() + "\nDescription:  " + getDescription() + "\nThe deadline: " + getDeadLine() + "\nStatus is done: " + isDone() + "\nCreator: " + getCreator().getSummary();
-    }
 }
