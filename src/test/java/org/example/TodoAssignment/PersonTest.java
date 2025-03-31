@@ -1,13 +1,10 @@
 package org.example.TodoAssignment;
 
+import org.example.TodoAssignment.user.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.awt.*;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
     private Person person;

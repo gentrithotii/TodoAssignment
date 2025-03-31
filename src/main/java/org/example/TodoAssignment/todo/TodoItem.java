@@ -1,4 +1,6 @@
-package org.example.TodoAssignment;
+package org.example.TodoAssignment.todo;
+
+import org.example.TodoAssignment.user.Person;
 
 import java.time.LocalDate;
 

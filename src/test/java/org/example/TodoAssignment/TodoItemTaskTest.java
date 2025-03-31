@@ -1,13 +1,14 @@
 package org.example.TodoAssignment;
 
+import org.example.TodoAssignment.todo.TodoItem;
+import org.example.TodoAssignment.todo.TodoItemTask;
+import org.example.TodoAssignment.user.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TodoItemTaskTest {
     private TodoItemTask task;

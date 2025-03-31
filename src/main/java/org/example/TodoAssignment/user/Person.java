@@ -1,6 +1,4 @@
-package org.example.TodoAssignment;
-
-import java.text.MessageFormat;
+package org.example.TodoAssignment.user;
 
 public class Person {
     private int id;

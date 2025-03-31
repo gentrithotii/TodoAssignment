@@ -1,13 +1,20 @@
-package org.example.TodoAssignment;
+package org.example.TodoAssignment.todo;
+
+import org.example.TodoAssignment.user.Person;
 
 public class TodoItemTask {
-    private int id;
+    private static int sequencer = 0;
+    private final int id;
     private boolean assigned;
     private TodoItem todoItem;
     private Person assignee;
 
-    TodoItemTask() {
-        this.id++;
+    public TodoItemTask() {
+        this.id = getNextId();
+    }
+
+    private int getNextId() {
+        return ++sequencer;
     }
 
     public int getId() {

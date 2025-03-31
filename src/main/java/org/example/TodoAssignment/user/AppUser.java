@@ -1,4 +1,4 @@
-package org.example.TodoAssignment;
+package org.example.TodoAssignment.user;
 
 public class AppUser {
     private String userName;
