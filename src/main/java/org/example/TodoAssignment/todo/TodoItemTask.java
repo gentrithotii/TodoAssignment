@@ -77,8 +77,6 @@ public class TodoItemTask {
         sb.append("Id: ").append(getId()).append("\n")
                 .append("Todo item: ").append(getTodoItem()).append("\n")
                 .append("Assigned status: ").append(isAssigned()).append("\n");
-
-
         return sb.toString();
     }
 }

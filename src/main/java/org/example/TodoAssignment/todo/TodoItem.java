@@ -6,24 +6,33 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class TodoItem {
-    private int id;
+    private static int incrementId = 0;
+    private final int id;
     private String title;
     private String description;
     private LocalDate deadLine;
     private boolean done;
     private Person creator;
 
-    public TodoItem(String title, String description, LocalDate deadLine, boolean done, Person creator) {
-        this.id += 1;
+    public TodoItem(String title, String description, LocalDate deadLine, boolean done) {
+        this.id = getIncrementId();
         setTitle(title);
         setDescription(description);
         setDeadLine(deadLine);
         setDone(done);
+    }
+
+    public TodoItem(String title, String description, LocalDate deadLine, boolean done, Person creator) {
+        this(title, description, deadLine, done);
         setCreator(creator);
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getIncrementId() {
+        return ++incrementId;
     }
 
     public String getTitle() {

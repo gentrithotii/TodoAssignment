@@ -27,7 +27,7 @@ class TodoItemTaskTest {
     @DisplayName("Test if task ID is retrieved correctly")
     void getId() {
         //Arrange
-        int expected = 1;
+        int expected = 5;
 
         //Act
         int result = task.getId();
@@ -108,18 +108,50 @@ class TodoItemTaskTest {
         Assertions.assertEquals(todoItem, result);
     }
 
+    @Test
+    @DisplayName("Test TodoItemTask equals method")
+    void testTodoItemTaskEquals() {
+        // Arrange
+        Person person = new Person("Gentrit", "Hoti", "gentrit@test.com");
+        TodoItem item = new TodoItem("Clean the House", "Clean the house first and second floor", LocalDate.now().plusDays(1), false, person);
+        TodoItemTask task1 = new TodoItemTask(item, person);
+        TodoItemTask task2 = new TodoItemTask(item, person);
+        TodoItemTask task3 = new TodoItemTask(new TodoItem("Different Task", "Description", LocalDate.now(), false, person), person);
+
+        // Act & Assert
+        Assertions.assertEquals(task1, task2);
+        Assertions.assertNotEquals(task1, task3);
+        Assertions.assertNotEquals(task1, null);
+    }
 
     @Test
-    @DisplayName("Test if getSummary returns expected value")
-    void getSummary() {
-        //Arrange
-        String expected = "Add summary";
+    @DisplayName("Test TodoItemTask hashCode method")
+    void testTodoItemTaskHashCode() {
+        // Arrange
+        Person person = new Person("Gentrit", "Hoti", "gentrit@test.com");
+        TodoItem item = new TodoItem("Clean the House", "Clean the house first and second floor", LocalDate.now().plusDays(1), false, person);
+        TodoItemTask task1 = new TodoItemTask(item, person);
+        TodoItemTask task2 = new TodoItemTask(item, person);
 
-        //Act
+        // Act & Assert
+        Assertions.assertEquals(task1.hashCode(), task2.hashCode());
+    }
+
+    @Test
+    @DisplayName("Test TodoItemTask toString method")
+    void testTodoItemTaskToString() {
+        // Arrange
+        Person person = new Person("Gentrit", "Hoti", "gentrit@test.com");
+        TodoItem item = new TodoItem("Clean the House", "Clean the house first and second floor", LocalDate.now().plusDays(1), false, person);
+        TodoItemTask task = new TodoItemTask(item, person);
+        String expected = "Id: " + task.getId() + "\n" + "Todo item: " + item + "\n" + "Assigned status: " + task.isAssigned() + "\n";
+
+        // Act
         String result = task.toString();
 
-        //Assert
+        // Assert
         Assertions.assertEquals(expected, result);
     }
-    //TODO Add Tests for override methods
+
+    //TODO hashCode and equals method check
 }

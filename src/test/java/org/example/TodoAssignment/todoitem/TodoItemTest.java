@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 class TodoItemTest {
     private TodoItem todoItem;
 
@@ -138,5 +141,47 @@ class TodoItemTest {
         Assertions.assertTrue(summary.contains("Test Description"));
     }
 
-    //TODO Add tests for override methods
+    @Test
+    @DisplayName("Test TodoItem equals method")
+    void testEquals() {
+        // Arrange
+        TodoItem item1 = new TodoItem("Task1", "Description1", LocalDate.of(2025, 3, 31), false);
+        TodoItem item2 = new TodoItem("Task1", "Description1", LocalDate.of(2025, 3, 31), false);
+        TodoItem item3 = new TodoItem("Task2", "Description2", LocalDate.of(2025, 4, 1), true);
+
+        // Act & Assert
+        assertEquals(item1, item2);
+        assertNotEquals(item1, item3);
+        assertNotEquals(item1, null);
+    }
+
+    @Test
+    @DisplayName("Test TodoItem hashCode method")
+    void testHashCode() {
+        // Arrange
+        TodoItem item1 = new TodoItem("Task1", "Description1", LocalDate.of(2025, 3, 31), false);
+        TodoItem item2 = new TodoItem("Task1", "Description1", LocalDate.of(2025, 3, 31), false);
+
+        // Act & Assert
+        assertEquals(item1.hashCode(), item2.hashCode());
+    }
+
+    @Test
+    @DisplayName("Test TodoItem toString method")
+    void testToString() {
+        // Arrange
+        TodoItem item = new TodoItem("Task1", "Description1", LocalDate.of(2025, 3, 31), false);
+        String expected = "Todo name: Task1\n" +
+                "Description: Description1\n" +
+                "The deadline: 2025-03-31\n" +
+                "Is done status: false";
+
+        // Act
+        String result = item.toString();
+
+        // Assert
+        assertEquals(expected, result);
+    }
+
+    //TODO Check hash and equals test methods
 }
