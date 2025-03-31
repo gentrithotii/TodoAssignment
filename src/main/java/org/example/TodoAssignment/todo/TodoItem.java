@@ -14,7 +14,7 @@ public class TodoItem {
     private Person creator;
 
     public TodoItem(String title, String description, LocalDate deadLine, boolean done, Person creator) {
-        this.id++;
+        this.id += 1;
         setTitle(title);
         setDescription(description);
         setDeadLine(deadLine);

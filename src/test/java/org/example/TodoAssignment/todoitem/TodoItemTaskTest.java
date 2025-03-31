@@ -1,7 +1,9 @@
-package org.example.TodoAssignment;
+package org.example.TodoAssignment.todoitem;
 
 import org.example.TodoAssignment.todo.TodoItem;
 import org.example.TodoAssignment.todo.TodoItemTask;
+import org.example.TodoAssignment.user.AppRole;
+import org.example.TodoAssignment.user.AppUser;
 import org.example.TodoAssignment.user.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +17,10 @@ class TodoItemTaskTest {
 
     @BeforeEach
     void setUp() {
-        task = new TodoItemTask();
+        AppUser appuser = new AppUser("gentrithotii", "password123", AppRole.ROLE_APP_ADMIN);
+        Person person = new Person("Gentrit", "Hoti", "gentrit@test.com", appuser);
+        TodoItem item = new TodoItem("Clean the House", "Clean the house first and second floor", LocalDate.now().plusDays(1), false, person);
+        task = new TodoItemTask(item, person);
     }
 
     @Test
@@ -60,12 +65,12 @@ class TodoItemTaskTest {
         Assertions.assertEquals(expected, result);
     }
 
-//    @Test
-//    @DisplayName("Test if setting assignee to null throws exception")
-//    void setAssignee_NullValue() {
-//        //Act & Assert
-//        Assertions.assertThrows(IllegalArgumentException.class, () -> task.setAssignee(null));
-//    }
+    @Test
+    @DisplayName("Test if setting assignee to null throws exception")
+    void setAssignee_NullValue() {
+        //Act & Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> task.setAssignee(null));
+    }
 
     @Test
     @DisplayName("Test if setting assignee correctly updates")
@@ -81,12 +86,12 @@ class TodoItemTaskTest {
         Assertions.assertEquals(assignee, result);
     }
 
-//    @Test
-//    @DisplayName("Test if setting todo item to null throws exception")
-//    void setTodoItem_NullValue() {
-//        //Act & Assert
-//        Assertions.assertThrows(IllegalArgumentException.class, () -> task.setTodoItem(null));
-//    }
+    @Test
+    @DisplayName("Test if setting todo item to null throws exception")
+    void setTodoItem_NullValue() {
+        //Act & Assert
+        Assertions.assertThrows(IllegalArgumentException.class, () -> task.setTodoItem(null));
+    }
 
     @Test
     @DisplayName("Test if setting todo item correctly updates")
@@ -116,4 +121,5 @@ class TodoItemTaskTest {
         //Assert
         Assertions.assertEquals(expected, result);
     }
+    //TODO Add Tests for override methods
 }

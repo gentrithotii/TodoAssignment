@@ -1,4 +1,4 @@
-package org.example.TodoAssignment;
+package org.example.TodoAssignment.todoitem;
 
 import org.example.TodoAssignment.todo.TodoItem;
 import org.example.TodoAssignment.user.Person;
@@ -137,4 +137,6 @@ class TodoItemTest {
         Assertions.assertTrue(summary.contains("Test Title"));
         Assertions.assertTrue(summary.contains("Test Description"));
     }
+
+    //TODO Add tests for override methods
 }

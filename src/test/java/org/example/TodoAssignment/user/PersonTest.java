@@ -1,10 +1,12 @@
-package org.example.TodoAssignment;
+package org.example.TodoAssignment.user;
 
-import org.example.TodoAssignment.user.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class PersonTest {
     private Person person;
@@ -111,7 +113,42 @@ class PersonTest {
     }
 
     @Test
-    @DisplayName("")
-    void getSummary() {
+    @DisplayName("Test Person equals method")
+    void testEquals() {
+        //TODO remove Id from Equals
+
+        // Arrange
+        Person person1 = new Person("gentrithotii", "hoti", "gentrit@hoti.com");
+        Person person2 = new Person("gentrithotii", "hoti", "gentrit@hoti.com");
+        Person person3 = new Person("anotherUser", "password123", "gentrit@hoti.com");
+
+        // Act & Assert
+        assertEquals(person1, person2);
+        assertNotEquals(person1, person3);
+        assertNotEquals(person1, null);
+    }
+
+    @Test
+    @DisplayName("Test Person hashCode method")
+    void testHashCode() {
+        //TODO Check
+
+        // Arrange
+        Person person1 = new Person("Gentrit", "Hoti", "gentrit@hoti.com");
+        Person person2 = new Person("Gentrit", "Hoti", "gentrit@hoti.com");
+
+        // Act & Assert
+        assertEquals(person1.hashCode(), person2.hashCode());
+    }
+
+    @Test
+    @DisplayName("Test Person  toString method")
+    void testToString() {
+        //Arrange
+        String expected = "Id: 1\nName: Gentrit Test\nEmail: Gentrit.test@test.com";
+        //Act
+        String result = person.toString();
+        //Assert
+        Assertions.assertEquals(expected, result);
     }
 }

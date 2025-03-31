@@ -11,8 +11,11 @@ public class TodoItemTask {
     private TodoItem todoItem;
     private Person assignee;
 
-    public TodoItemTask() {
+
+    public TodoItemTask(TodoItem todoItem, Person assignee) {
         this.id = getNextId();
+        setTodoItem(todoItem);
+        setAssignee(assignee);
     }
 
     private int getNextId() {
@@ -36,6 +39,9 @@ public class TodoItemTask {
     }
 
     public void setTodoItem(TodoItem todoItem) {
+        if (todoItem == null) {
+            throw new IllegalArgumentException("Can't set empty Todo!");
+        }
         this.todoItem = todoItem;
     }
 
@@ -44,7 +50,13 @@ public class TodoItemTask {
     }
 
     public void setAssignee(Person assignee) {
-        this.assignee = assignee;
+        if (assignee == null) {
+            setAssigned(false);
+            throw new IllegalArgumentException("Can't assign null to Assignee ");
+        } else {
+            setAssigned(true);
+            this.assignee = assignee;
+        }
     }
 
     @Override
@@ -64,7 +76,7 @@ public class TodoItemTask {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId()).append("\n")
                 .append("Todo item: ").append(getTodoItem()).append("\n")
-                .append("Assigned status: ").append(assigned).append("\n");
+                .append("Assigned status: ").append(isAssigned()).append("\n");
 
 
         return sb.toString();

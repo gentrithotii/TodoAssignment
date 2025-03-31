@@ -3,20 +3,34 @@ package org.example.TodoAssignment.user;
 import java.util.Objects;
 
 public class Person {
-    private int id;
+    private static int sequencer = 0;
+    private final int id;
     private String firstName;
     private String lastName;
     private String email;
     private AppUser credentials;
 
     public Person(String firstName, String lastName, String email) {
+        this.id = getNextInt();
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
+        setCredentials(credentials);
+    }
+
+    //TODO Check for lower and uppercase on Email , Name , Last name error handling
+
+    public Person(String firstName, String lastName, String email, AppUser credentials) {
+        this(firstName, lastName, email);
+        setCredentials(credentials);
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getNextInt() {
+        return ++sequencer;
     }
 
     public AppUser getCredentials() {
@@ -46,10 +60,6 @@ public class Person {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public void getLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {

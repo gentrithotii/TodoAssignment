@@ -13,6 +13,7 @@ public class AppUser {
         setRole(role);
     }
 
+    //TODO Check for lower and uppercase on username error handling
 
     public String getUserName() {
         return userName;
