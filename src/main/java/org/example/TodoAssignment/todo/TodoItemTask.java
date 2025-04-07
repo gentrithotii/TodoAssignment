@@ -1,5 +1,6 @@
 package org.example.TodoAssignment.todo;
 
+import org.example.TodoAssignment.sequencers.TodoItemIdSequencer;
 import org.example.TodoAssignment.user.Person;
 
 import java.util.Objects;
@@ -13,13 +14,9 @@ public class TodoItemTask {
 
 
     public TodoItemTask(TodoItem todoItem, Person assignee) {
-        this.id = getNextId();
+        this.id = TodoItemIdSequencer.nextId();
         setTodoItem(todoItem);
         setAssignee(assignee);
-    }
-
-    private int getNextId() {
-        return ++sequencer;
     }
 
     public int getId() {

@@ -1,9 +1,10 @@
 package org.example.TodoAssignment.user;
 
+import org.example.TodoAssignment.sequencers.PersonIdSequencer;
+
 import java.util.Objects;
 
 public class Person {
-    private static int sequencer = 0;
     private final int id;
     private String firstName;
     private String lastName;
@@ -11,7 +12,7 @@ public class Person {
     private AppUser credentials;
 
     public Person(String firstName, String lastName, String email) {
-        this.id = getNextInt();
+        this.id = PersonIdSequencer.nextId();
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
@@ -27,10 +28,6 @@ public class Person {
 
     public int getId() {
         return id;
-    }
-
-    public int getNextInt() {
-        return ++sequencer;
     }
 
     public AppUser getCredentials() {
@@ -90,9 +87,7 @@ public class Person {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId()).append("\n")
-                .append("Name: ").append(getFirstName()).append(" ").append(getLastName()).append("\n")
-                .append("Email: ").append(getEmail());
+        sb.append("Id: ").append(getId()).append("\n").append("Name: ").append(getFirstName()).append(" ").append(getLastName()).append("\n").append("Email: ").append(getEmail());
 
         return sb.toString();
     }

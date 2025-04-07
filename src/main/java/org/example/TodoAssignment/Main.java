@@ -1,6 +1,5 @@
 package org.example.TodoAssignment;
 
-
 import org.example.TodoAssignment.todo.TodoItem;
 import org.example.TodoAssignment.todo.TodoItemTask;
 import org.example.TodoAssignment.user.AppRole;
@@ -8,6 +7,7 @@ import org.example.TodoAssignment.user.AppUser;
 import org.example.TodoAssignment.user.Person;
 
 import java.time.LocalDate;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,5 +19,23 @@ public class Main {
         System.out.println(gentritPerson);
         System.out.println(gentritUser);
         System.out.println(todoItemTask);
+
+//        Thread thread1 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                SingeltonTest firstSingelton = SingeltonTest.getSingeltonTest();
+//            }
+//        });
+//
+//        Thread thread2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                SingeltonTest firstSecond = SingeltonTest.getSingeltonTest();
+//            }
+//        });
+//
+//        thread1.start();
+//        thread2.start();
+
     }
 }

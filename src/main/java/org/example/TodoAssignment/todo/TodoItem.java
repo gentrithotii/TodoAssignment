@@ -1,12 +1,13 @@
 package org.example.TodoAssignment.todo;
 
+import org.example.TodoAssignment.sequencers.TodoItemIdSequencer;
 import org.example.TodoAssignment.user.Person;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class TodoItem {
-    private static int incrementId = 0;
+
     private final int id;
     private String title;
     private String description;
@@ -15,7 +16,7 @@ public class TodoItem {
     private Person creator;
 
     public TodoItem(String title, String description, LocalDate deadLine, boolean done) {
-        this.id = getIncrementId();
+        this.id = TodoItemIdSequencer.nextId();
         setTitle(title);
         setDescription(description);
         setDeadLine(deadLine);
@@ -29,10 +30,6 @@ public class TodoItem {
 
     public int getId() {
         return id;
-    }
-
-    public int getIncrementId() {
-        return ++incrementId;
     }
 
     public String getTitle() {
