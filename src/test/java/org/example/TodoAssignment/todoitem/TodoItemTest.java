@@ -1,7 +1,7 @@
 package org.example.TodoAssignment.todoitem;
 
-import org.example.TodoAssignment.model.TodoItem;
-import org.example.TodoAssignment.model.Person;
+import org.example.TodoAssignment.models.TodoItem;
+import org.example.TodoAssignment.models.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

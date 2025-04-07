@@ -1,15 +1,15 @@
 package org.example.TodoAssignment.data.interfaces;
 
-import org.example.TodoAssignment.model.AppUser;
+import org.example.TodoAssignment.models.AppUser;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IAppUserDAO {
     AppUser persist(AppUser appUser);
 
     AppUser findByUsername(String username);
 
-    ArrayList<AppUser> findAll();
+    List<AppUser> findAll();
 
     void remove(String userName);
 }

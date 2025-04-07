@@ -1,10 +1,10 @@
 package org.example.TodoAssignment;
 
-import org.example.TodoAssignment.model.TodoItem;
-import org.example.TodoAssignment.model.TodoItemTask;
+import org.example.TodoAssignment.models.TodoItem;
+import org.example.TodoAssignment.models.TodoItemTask;
 import org.example.TodoAssignment.user.AppRole;
-import org.example.TodoAssignment.model.AppUser;
-import org.example.TodoAssignment.model.Person;
+import org.example.TodoAssignment.models.AppUser;
+import org.example.TodoAssignment.models.Person;
 
 import java.time.LocalDate;
 

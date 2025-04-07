@@ -1,8 +1,8 @@
 package org.example.TodoAssignment.data.interfaces;
 
-import org.example.TodoAssignment.model.Person;
+import org.example.TodoAssignment.models.Person;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IPersonDAO {
     Person persist(Person person);
@@ -11,7 +11,7 @@ public interface IPersonDAO {
 
     Person findByEmail(String email);
 
-    ArrayList<Person> findAll();
+    List<Person> findAll();
 
     void remove(int id);
 }

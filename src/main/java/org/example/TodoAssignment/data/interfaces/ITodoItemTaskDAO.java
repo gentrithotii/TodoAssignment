@@ -1,18 +1,20 @@
 package org.example.TodoAssignment.data.interfaces;
 
-import org.example.TodoAssignment.model.TodoItemTask;
+import org.example.TodoAssignment.models.TodoItemTask;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface ITodoItemTaskDAO {
     TodoItemTask persist(TodoItemTask todoItemTask);
 
     TodoItemTask findById(int id);
 
-    ArrayList<TodoItemTask> findAll();
+    List<TodoItemTask> findAll();
 
-    ArrayList<TodoItemTask> findByAssignedStatus(boolean status);
+    List<TodoItemTask> findByAssignedStatus(boolean status);
 
-    ArrayList<TodoItemTask> findByPersonId(int personId);
+    List<TodoItemTask> findByPersonId(int personId);
+
+    void remove(int id);
 
 }
