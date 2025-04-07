@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public interface ITodoItemDAO {
-    TodoItem presist(TodoItem todoItem);
+    TodoItem persist(TodoItem todoItem);
 
     TodoItem findById(int id);
 

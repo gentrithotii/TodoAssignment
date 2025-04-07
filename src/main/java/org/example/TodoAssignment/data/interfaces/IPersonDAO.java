@@ -5,7 +5,7 @@ import org.example.TodoAssignment.model.Person;
 import java.util.ArrayList;
 
 public interface IPersonDAO {
-    Person presist(Person person);
+    Person persist(Person person);
 
     Person findById(int id);
 
