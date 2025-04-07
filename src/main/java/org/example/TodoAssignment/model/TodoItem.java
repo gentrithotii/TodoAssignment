@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class TodoItem {
-
     private final int id;
     private String title;
     private String description;

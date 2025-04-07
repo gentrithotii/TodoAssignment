@@ -15,5 +15,4 @@ public interface ITodoItemTaskDAO {
 
     ArrayList<TodoItemTask> findByPersonId(int personId);
 
-
 }
