@@ -24,6 +24,8 @@ public class Main {
 
         SeedData.populate(personDAO, userDAO, todoItemDAO, todoItemTaskDAO);
 
+//        System.out.println(" " + personDAO.findAll());
+        System.out.println(todoItemDAO.findByPersonId(2));
 
     }
 }

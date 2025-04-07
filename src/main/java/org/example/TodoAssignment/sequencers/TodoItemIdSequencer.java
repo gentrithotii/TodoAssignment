@@ -1,10 +1,10 @@
 package org.example.TodoAssignment.sequencers;
 
 public class TodoItemIdSequencer {
-    private static int currentId;
+    private static int currentId = 1;
 
     public static int nextId() {
-        return ++currentId;
+        return currentId++;
     }
 
     public static int getCurrentId() {
