@@ -1,4 +1,6 @@
-package org.example.TodoAssignment.user;
+package org.example.TodoAssignment.model;
+
+import org.example.TodoAssignment.user.AppRole;
 
 import java.util.Objects;
 

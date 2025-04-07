@@ -1,6 +1,6 @@
-package org.example.TodoAssignment.todo.interfaces;
+package org.example.TodoAssignment.data.interfaces;
 
-import org.example.TodoAssignment.user.AppUser;
+import org.example.TodoAssignment.model.AppUser;
 
 import java.util.ArrayList;
 

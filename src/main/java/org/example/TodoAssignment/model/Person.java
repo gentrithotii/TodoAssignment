@@ -1,4 +1,4 @@
-package org.example.TodoAssignment.user;
+package org.example.TodoAssignment.model;
 
 import org.example.TodoAssignment.sequencers.PersonIdSequencer;
 

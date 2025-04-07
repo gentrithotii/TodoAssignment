@@ -1,7 +1,6 @@
-package org.example.TodoAssignment.todo;
+package org.example.TodoAssignment.model;
 
 import org.example.TodoAssignment.sequencers.TodoItemIdSequencer;
-import org.example.TodoAssignment.user.Person;
 
 import java.time.LocalDate;
 import java.util.Objects;

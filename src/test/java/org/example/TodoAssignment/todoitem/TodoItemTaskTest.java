@@ -1,10 +1,10 @@
 package org.example.TodoAssignment.todoitem;
 
-import org.example.TodoAssignment.todo.TodoItem;
-import org.example.TodoAssignment.todo.TodoItemTask;
+import org.example.TodoAssignment.model.TodoItem;
+import org.example.TodoAssignment.model.TodoItemTask;
 import org.example.TodoAssignment.user.AppRole;
-import org.example.TodoAssignment.user.AppUser;
-import org.example.TodoAssignment.user.Person;
+import org.example.TodoAssignment.model.AppUser;
+import org.example.TodoAssignment.model.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
