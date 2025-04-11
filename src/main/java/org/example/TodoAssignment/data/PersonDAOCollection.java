@@ -40,7 +40,7 @@ public class PersonDAOCollection implements IPersonDAO {
     @Override
     public Person findByEmail(String email) {
         for (Person person : getPersonList()) {
-            if (person.getEmail().equals(email)) {
+            if (person.getEmail().equalsIgnoreCase(email)) {
                 return person;
             }
         }

@@ -29,7 +29,7 @@ public class AppUserDAOCollection implements IAppUserDAO {
     @Override
     public AppUser findByUsername(String username) {
         for (AppUser user : getAppUserList()) {
-            if (user.getUserName().equals(username)) {
+            if (user.getUserName().equalsIgnoreCase(username)) {
                 return user;
             }
         }

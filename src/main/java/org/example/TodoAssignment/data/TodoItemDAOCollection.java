@@ -55,7 +55,7 @@ public class TodoItemDAOCollection implements ITodoItemDAO {
     public List<TodoItem> findByTitleContains(String title) {
         List<TodoItem> titleContains = new ArrayList<>();
         for (TodoItem todoItem : getTodoItemList()) {
-            if (todoItem.getTitle().contains(title)) {
+            if (todoItem.getTitle().toLowerCase().contains(title.toLowerCase())) {
                 titleContains.add(todoItem);
             }
         }
