@@ -46,7 +46,7 @@ public class TodoItemTaskDAOCollection implements ITodoItemTaskDAO {
         List<TodoItemTask> listWithSpecificStatus = new ArrayList<>();
 
         for (TodoItemTask todoItemTask : getTodoItemTaskList()) {
-            if (todoItemTask.isAssigned() == status) {
+            if (todoItemTask.getTodoItem().isDone() == status) {
                 listWithSpecificStatus.add(todoItemTask);
             }
         }
