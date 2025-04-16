@@ -1,6 +1,6 @@
 package org.example.TodoAssignment.models;
 
-import org.example.TodoAssignment.user.AppRole;
+import org.example.TodoAssignment.models.user.AppRole;
 
 import java.util.Objects;
 
@@ -14,8 +14,6 @@ public class AppUser {
         setPassword(password);
         setRole(role);
     }
-
-    //TODO Check for lower and uppercase on username error handling
 
     public String getUserName() {
         return userName;

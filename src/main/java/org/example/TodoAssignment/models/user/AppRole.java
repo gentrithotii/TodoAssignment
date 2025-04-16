@@ -1,4 +1,4 @@
-package org.example.TodoAssignment.user;
+package org.example.TodoAssignment.models.user;
 
 public enum AppRole {
     ROLE_APP_USER, ROLE_APP_ADMIN,

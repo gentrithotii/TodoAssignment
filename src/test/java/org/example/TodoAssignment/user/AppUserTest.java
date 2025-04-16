@@ -1,6 +1,7 @@
 package org.example.TodoAssignment.user;
 
 import org.example.TodoAssignment.models.AppUser;
+import org.example.TodoAssignment.models.user.AppRole;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

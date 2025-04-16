@@ -5,7 +5,7 @@ import org.example.TodoAssignment.data.PersonDAOCollection;
 import org.example.TodoAssignment.data.TodoItemDAOCollection;
 import org.example.TodoAssignment.data.TodoItemTaskDAOCollection;
 import org.example.TodoAssignment.models.*;
-import org.example.TodoAssignment.user.AppRole;
+import org.example.TodoAssignment.models.user.AppRole;
 
 import java.time.LocalDate;
 

@@ -2,7 +2,7 @@ package org.example.TodoAssignment.todoitem;
 
 import org.example.TodoAssignment.models.TodoItem;
 import org.example.TodoAssignment.models.TodoItemTask;
-import org.example.TodoAssignment.user.AppRole;
+import org.example.TodoAssignment.models.user.AppRole;
 import org.example.TodoAssignment.models.AppUser;
 import org.example.TodoAssignment.models.Person;
 import org.junit.jupiter.api.Assertions;
